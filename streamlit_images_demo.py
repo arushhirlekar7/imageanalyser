@@ -8,9 +8,7 @@ import streamlit as st
 def encode_image(uploaded_file):
     return base64.b64encode(uploaded_file.read()).decode()
 
-
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-llm = ChatOllama(model="llava")
+llm = ChatOllama(model="llava", base_url="https://moonscape-consumer-tasting.ngrok-free.dev/")
 prompt = ChatPromptTemplate.from_messages(
     [
         ("system", "You are a helpful assistant that can describe images."),
