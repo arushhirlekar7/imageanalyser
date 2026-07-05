@@ -28,6 +28,8 @@ prompt = ChatPromptTemplate.from_messages(
     ]
 )
 chain=prompt|llm
+st.title("Image Analyser- Using ollama llava model connected to local server using ngrok")
+st.text("Developed by: Arush A.H.")
 uploaded_file=st.file_uploader("Upload your image",type=["jpg","png"])
 question=st.text_input("Enter a question")
 if question:
